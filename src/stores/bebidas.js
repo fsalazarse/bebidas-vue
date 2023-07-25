@@ -21,11 +21,13 @@ export const useBebidasStore = defineStore('bebidas',() => {
     async function obtenerRecetas() {
         const {data:{drinks}} = await APIService.buscarRecetas(busqueda) 
         recetas.value = drinks
+        console.log(recetas.value);
     }
 
     return {
         categorias,
         busqueda,
-        obtenerRecetas
+        obtenerRecetas,
+        recetas
     }
 })
